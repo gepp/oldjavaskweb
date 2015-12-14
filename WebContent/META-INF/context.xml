@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+<Resource name="SYBASEDS" auth="Container"
+ 	type="javax.sql.DataSource" 
+ 	driverClassName="com.sybase.jdbc2.jdbc.SybDriver"
+	username="sa" 
+	password="" 
+	maxIdle="30" 
+	maxWait="10000" 
+	maxActive="100"
+	url="jdbc:sybase:Tds:LAOCAI:5000/jsdtsk?charset=iso_1" />
+<!-- <Resource name="ZGSYBASEDS" auth="Container"
+ 	type="javax.sql.DataSource" 
+ 	driverClassName="com.sybase.jdbc2.jdbc.SybDriver"
+	username="sa" 
+	password="" 
+	maxIdle="30" 
+	maxWait="10000" 
+	maxActive="100"
+	url="jdbc:sybase:Tds:LAOCAI:5003/anqing?charset=iso_1" /> -->
+<Resource name="ZGSYBASEDS" auth="Container"
+ 	type="javax.sql.DataSource" 
+ 	driverClassName="com.microsoft.jdbc.sqlserver.SQLServerDriver"
+	username="sa" 
+	password="" 
+	maxIdle="30" 
+	maxWait="10000" 
+	maxActive="100"
+	url="jdbc:microsoft:sqlserver://localhost:1433;DatabaseName=skjava" />
+</Context>

@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans />
+	<global-exceptions />
+	<global-forwards>
+		<forward name="error" path="/error.jsp"></forward>
+		<forward name="success" path="/success.jsp"></forward>
+	</global-forwards>
+	<action-mappings>
+		<!-- 登陆模块 -->
+		<action parameter="op" path="/loginTy"
+			type="jsdt.action.login.LoginTyAction">
+			<forward name="success" path="/index_1.jsp"></forward>
+			<forward name="error" path="/error.jsp"></forward>
+		</action>
+		<!-- 税控基础设置 -->
+		<action parameter="op" path="/taxpayer"
+			type="jsdt.action.taxpayer.TaxpayerAction">
+			<forward name="toImport" path="/regist/taxpayerTy.jsp"></forward>
+			<forward name="noExist"
+				path="/regist/taxpayerTy.nsrxx.jsp">
+			</forward>
+			<forward name="isExist"
+				path="/regist/taxpayerTy.list.jsp">
+			</forward>
+			<forward name="toHYMX" path="/regist/taxpayerTy.hymx.jsp"></forward>
+			<forward name="toZCLX" path="/regist/taxpayerTy.zclx.jsp"></forward>
+			<forward name="toSSHY" path="/regist/taxpayerTy.hy.jsp"></forward>
+			<forward name="toSWJG" path="/regist/taxpayerTy.swjg.jsp"></forward>
+			<forward name="toNsrSZSM"
+				path="/regist/taxpayerTy.nsrszsm.jsp">
+			</forward>
+			<forward name="toNsrSZSMAdd"
+				path="/regist/taxpayerTy.nsrszsm.add.jsp">
+			</forward>
+			<forward name="toJqxxAdd"
+				path="/regist/taxpayerTy.jqxx.add.jsp">
+			</forward>
+			<forward name="toJqxxEdit"
+				path="/regist/taxpayerTy.jqxx.edit.jsp">
+			</forward>
+			<forward name="toKPXESZ"
+				path="/regist/taxpayerTy.skxx.jsp">
+			</forward><!-- 开票限额设置 -->
+			<forward name="toFK" path="/regist/taxpayerTy.fk.jsp"></forward>
+			<forward name="toNsrEdit"
+				path="/regist/taxpayerTy.edit.jsp">
+			</forward>
+			<forward name="toNsrSzsmEdit"
+				path="/regist/taxpayerTy.nsrszsm.edit.jsp">
+			</forward>
+			<forward name="toXxfsListWlkp"
+				path="/regist/xxfs.wlkp.jsp"
+				>
+			
+			</forward>
+			<forward name="toXxfsAdd"
+				path="/regist/xxfs.wlkp.add.jsp"
+				>
+			</forward>
+			<forward name="toXxfsEdit"
+				path="/regist/xxfs.wlkp.edit.jsp"
+				>
+			</forward>
+			
+			<!-- 停业-->
+			<forward name="ty"
+				path="/jqgl/jqty.ty.list.jsp"
+				></forward>
+			<forward name="tyxxlr"
+			    path="/jqgl/tyxxlr.jsp"
+					 ></forward>
+				<!-- 复业-->
+			<forward name="fy"
+				path="/jqgl/jqfy.fy.list.jsp"
+				></forward>
+				
+				<forward name="fyxxlr"
+						 path="/jqgl/fyxxlr.jsp"
+						 ></forward>
+				<!-- 锁定 -->
+					 
+			<forward name="jqsd"
+				path="/jqgl/jqsd.sd.list.jsp"
+				></forward>
+				<!--注销 -->
+				<forward name="zx"
+						 path="/jqgl/jqzx.zx.list.jsp">
+					
+				</forward>
+				<forward name="zxxxlr"
+						 path="/jqgl/zxxxlr.jsp" >
+				</forward>
+				<forward name="jqjs"
+						 path="/jqgl/jqjs.js.list.jsp" >
+				</forward>
+		</action>
+
+		<!-- 发票管理 -->
+		<action parameter="op" path="/fpService"
+			type="jsdt.action.invoice.FpServiceAction">
+			<forward name="invoice" path="/invoice/invoice.jsp"></forward>
+			<forward name="toFpList" path="/invoice/invoice.list.jsp"></forward>
+			
+			<forward name="toFpListWlkp" path="/invoice/invoice.list.wlkp.jsp"></forward>
+			<forward name="toInvoiceXk"
+				path="/invoice/invoice.xk.jsp">
+			</forward>
+			<forward name="toInvoiceAdd"
+				path="/invoice/invoice.add.jsp">
+			</forward>
+			<forward name="toInvoiceAddWlkp"
+				path="/invoice/invoice.add.wlkp.jsp">
+			</forward>
+			<forward name="toInvoiceXk"
+				path="/invoice/invoice.xk.jsp">
+			</forward>
+			<forward name="toInvoiceAdd"
+				path="/invoice/invoice.add.jsp">
+			</forward>
+			<forward name="toFpbl" path="/invoice/fpbl.jsp"></forward>
+			<forward name="toFpblList" path="/invoice/fpbl.list.jsp"></forward>
+			<forward name="toFpblAdd" path="/invoice/fpbl.add.jsp"></forward>
+                         <forward name="error" path="/error.jsp"></forward>
+                            <forward name="error2" path="/error.js.jsp"></forward>
+		</action>
+
+		<!-- 申报数据 -->
+		<action parameter="op" path="/sbsj"
+			type="jsdt.action.sbsj.SbsjAction">
+			<forward name="zrysb" path="/sbsj/sbsj.jsp"></forward>
+			<forward name="zrysbList" path="/sbsj/sbsj.sbxx.jsp"></forward>
+			<forward name="sbhzxx" path="/sbsj/sbsj.hzxx.jsp"></forward>
+			<forward name="toJdsb" path="/sbsj/jdsb.jsp"></forward>
+			<forward name="toJdsbList" path="/sbsj/jdsb.sbxx.jsp"></forward>
+			<forward name="toJkhc" path="/sbsj/jkhc.jsp"></forward>
+			<forward name="jkhchc" path="/sbsj/jkhc.hc.jsp"></forward>
+		</action>
+		<!--系统管理 -->
+		<action parameter="op" path="/system"
+			type="jsdt.action.system.SystemAction">
+			<!--发票管理 -->
+			<forward name="toFpList" path="/system/fp.jsp"></forward>
+			<forward name="toFpAdd" path="/system/fp.add.jsp"></forward>
+			<forward name="toFpEdit" path="/system/fp.edit.jsp"></forward>
+			<!--品目设置  -->
+			<forward name="toPmList" path="/system/szsm.jsp"></forward>
+			<forward name="toPmAdd" path="/system/szsm.add.jsp"></forward>
+			<!--机器型号  -->
+			<forward name="toJqxhList" path="/system/jqxh.jsp"></forward>
+			<forward name="toJqxhAdd" path="/system/jqxh.add.jsp"></forward>
+			<forward name="toJqxhEdit" path="/system/jqxh.edit.jsp"></forward>
+			<!--注册类型  -->
+			<forward name="toZclxList" path="/system/zclx.jsp"></forward>
+			<forward name="toZclxAdd" path="/system/zclx.add.jsp"></forward>
+			<forward name="toZclxEdit" path="/system/zclx.edit.jsp"></forward>
+			<!--行业管理 -->
+			<forward name="toHyList" path="/system/hy.jsp"></forward>
+			<forward name="toHyAdd" path="/system/hy.add.jsp"></forward>
+			<forward name="toHyEdit" path="/system/hy.edit.jsp"></forward>
+			<!--行业明细管理  -->
+			<forward name="toHymxList" path="/system/hymx.jsp"></forward>
+			<forward name="toHymxAdd" path="/system/hymx.add.jsp"></forward>
+			<forward name="toHymxEdit" path="/system/hymx.edit.jsp"></forward>
+			<!--税务机关管理 -->
+			<forward name="toSwjgList" path="/system/swjg.jsp"></forward>
+			<forward name="toSwjgAdd" path="/system/swjg.add.jsp"></forward>
+			<forward name="toSwjgEdit" path="/system/swjg.edit.jsp"></forward>
+			<!--用户管理 -->
+			<forward name="toUserList" path="/system/user.jsp"></forward>
+			<forward name="toUserAdd" path="/system/user.add.jsp"></forward>
+			<forward name="toUserEdit" path="/system/user.edit.jsp"></forward>
+			<forward name="toUserAddRole"
+				path="/system/user.role.jsp">
+			</forward>
+			<!--角色管理  -->
+			<forward name="toRoleList" path="/system/role.jsp"></forward>
+			<forward name="toRoleAdd" path="/system/role.add.jsp"></forward>
+			<forward name="toRoleEdit" path="/system/role.edit.jsp"></forward>
+			<forward name="toRoleAddUser"
+				path="/system/role.user.jsp">
+				
+			</forward>
+				<!--基础信息设置-->
+			<forward name="toJcxxSz"
+				path="/system/jcxx.edit.jsp">
+			</forward>
+		</action>
+		<!--查询统计  -->
+		<action parameter="op" path="/cxtj"
+			type="jsdt.action.cxtj.CxtjAction">
+     <!--纳税人信息查询  -->
+     <forward name="toNsrxxImport" path="/cxtj/cx.nsrxx.jsp"></forward>
+     <forward name="toNsrxxList" path="/cxtj/cx.nsrxx.list.jsp"></forward>
+     <forward name="toNsrxxDetail" path="/cxtj/cx.nsrxx.detail.jsp"></forward>
+     <forward name="toNsrxxSwjg" path="/cxtj/cx.nsrxx.cxswjg.jsp"></forward>
+     <!--税控装置查询  -->
+     <forward name="toJqxxImport" path="/cxtj/cx.jqxx.jsp"></forward>
+     <forward name="toJqxxSzsm" path="/cxtj/cx.jqxx.szsm.jsp"></forward>
+     <forward name="toJqxxList" path="/cxtj/cx.jqxx.list.jsp"></forward>
+       <!-- 发票单卷汇总信息查询 -->
+     <forward name="toDjhzImport" path="/cxtj/cx.djhz.jsp"></forward>
+     <forward name="toDjhzList" path="/cxtj/cx.djhz.list.jsp"></forward>
+     <forward name="toDjkjhzList" path="/cxtj/cx.djkjhz.list.jsp"></forward>
+     <forward name="toDjkjmxList" path="/cxtj/cx.djkjmx.list.jsp"></forward>
+     <!-- 发票领购查询 -->
+     <forward name="toFplgImport" path="/cxtj/cx.fplg.jsp"></forward>
+     <forward name="toFplgList" path="/cxtj/cx.fplg.list.jsp"></forward>
+     <!-- 发票明细查询 -->
+     <forward name="toFpkjImport" path="/cxtj/cx.fpkj.jsp"></forward>
+     <forward name="toFpkjList" path="/cxtj/cx.fpkj.list.jsp"></forward>
+     <!-- 申报汇总数据 -->
+     <forward name="toSbsjImport" path="/cxtj/cx.sbsj.jsp"></forward>
+     <forward name="toSbsjList" path="/cxtj/cx.sbsj.list.jsp"></forward>
+     <forward name="toSbsjDetail" path="/cxtj/cx.sbsj.mx.jsp"></forward>
+     <!-- 日交易查询 -->
+     <forward name="toRjyImport" path="/cxtj/cx.rjymx.jsp"></forward>
+     <forward name="toRjyList" path="/cxtj/cx.rjymx.list.jsp"></forward>
+     
+     <!-- 查询用户卡信息 -->
+     <forward name="toYhkImport" path="/cxtj/cx.yhk.jsp"></forward>
+     <forward name="toYhkInfo" path="/cxtj/cx.yhk.show.jsp"></forward>
+     <!-- 查询税控卡信息 -->
+     <forward name="toSkkImport" path="/cxtj/cx.skk.jsp"></forward>
+     <forward name="toSkkInfo" path="/cxtj/cx.skk.show.jsp"></forward>
+     <!-- 查询本月未申报用户 -->
+     <forward name="toBywsbImport" path="/cxtj/cx.bywsb.jsp"></forward>
+     <forward name="toBywsbList" path="/cxtj/cx.bywsb.list.jsp"></forward>
+     	<forward name="newBywsb" path="/cxtj/cx.newbywsb.list.jsp"></forward>
+		</action>
+  
+
+
+
+	</action-mappings>
+	<!-- 字符过滤器 -->
+	<controller processorClass="jsdt.tools.Filter"></controller>
+	<message-resources parameter="com.jsdt.struts.ApplicationResources" />
+</struts-config>
+
